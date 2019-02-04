@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="assets/js/lib/paper-full.min.js"></script>
+    <script src="assets/js/lib/howler.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <title>Document</title>
 </head>
@@ -13,9 +14,17 @@
     <canvas id="myCanvas" resize></canvas>
 
     <script type="text/paperscript" canvas="myCanvas">
+        
+        var sound = new Howl({
+            src: ['assets/sounds/bubbles.mp3']
+          });
+           
+          
+
 
         var circles = [];
         function onKeyDown(event) {
+            sound.play();
 
             var maxPoint = new Point(view.size.width, view.size.height);
             var randPoint = Point.random();
@@ -37,3 +46,4 @@
 
 </body>
 </html>
+
