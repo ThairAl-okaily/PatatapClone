@@ -13,11 +13,14 @@
     <canvas id="myCanvas" resize></canvas>
 
     <script type="text/paperscript" canvas="myCanvas">
-        var myCircle = new Path.Circle(new Point(100, 70), 50);
-        myCircle.fillColor = 'black';
+        function onKeyDown(event) {
+            
+            var maxPoint = new Point(view.size.width, view.size.height);
+            var randPoint = Point.random();
+            var points = maxPoint * randPoint;
 
-        var myCircle = new Path.Circle(new Point(150, 120), 16);
-        myCircle.fillColor = 'purple';
+            new Path.Circle(points, 16).fillColor = "red";
+        }
     </script>
 
 </body>
